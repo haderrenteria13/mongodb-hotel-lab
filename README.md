@@ -21,8 +21,17 @@ Este proyecto contiene scripts y datos para practicar el uso de MongoDB.
 
 ## Instrucciones
 
-1. Asegúrate de tener MongoDB instalado y en ejecución.
-2. Usa el archivo `database-setup.mongodb.js` para configurar la base de datos:
+> [!IMPORTANT]  
+> Debes tener installado MongoDB.
+
+1. Usa el archivo `database-setup.mongodb.js` para configurar la base de datos:
+
    ```bash
    mongo < scripts/database-setup.mongodb.js
+   ```
+
+2. Ejecuta los queries del archivo `queries.mongodb.js`:
+
+   ```bash
+   mongo < scripts/queries.mongodb.js
    ```
