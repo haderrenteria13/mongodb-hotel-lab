@@ -1,0 +1,186 @@
+use("hotel");
+
+// Crear colecciones e insertar datos
+db.hoteles.insertMany([
+  {
+    _id: "hotel_001",
+    nombre: "Hotel Paraíso",
+    ubicacion: "Bogotá, Colombia",
+    estrellas: 4,
+    servicios: ["WiFi", "Piscina", "Gimnasio", "Restaurante"],
+  },
+]);
+
+db.hoteles.find();
+
+// Habitaciones
+db.habitaciones.insertMany([
+  {
+    _id: "hab_101",
+    numero: 101,
+    tipo: "Doble",
+    hotel_id: "hotel_001",
+    estado: "ocupada",
+    precio_noche: 100,
+  },
+  {
+    _id: "hab_102",
+    numero: 102,
+    tipo: "Suite",
+    hotel_id: "hotel_001",
+    estado: "ocupada",
+    precio_noche: 200,
+  },
+  {
+    _id: "hab_103",
+    numero: 103,
+    tipo: "Individual",
+    hotel_id: "hotel_001",
+    estado: "disponible",
+    precio_noche: 80,
+  },
+  {
+    _id: "hab_104",
+    numero: 104,
+    tipo: "Doble",
+    hotel_id: "hotel_001",
+    estado: "disponible",
+    precio_noche: 100,
+  },
+  {
+    _id: "hab_105",
+    numero: 105,
+    tipo: "Suite",
+    hotel_id: "hotel_001",
+    estado: "disponible",
+    precio_noche: 200,
+  },
+]);
+
+db.habitaciones.find();
+
+// Clientes
+db.clientes.insertMany([
+  {
+    _id: "cli_001",
+    nombre: "Juan Pérez",
+    correo: "juanperez@example.com",
+    estado: "activo",
+    ciudad: "Bogotá",
+    telefono: "3001234567",
+  },
+  {
+    _id: "cli_002",
+    nombre: "María Gómez",
+    correo: "mariagomez@example.com",
+    estado: "activo",
+    ciudad: "Medellín",
+    telefono: "3109876543",
+  },
+  {
+    _id: "cli_003",
+    nombre: "Carlos Ramírez",
+    correo: "carlosramirez@example.com",
+    estado: "inactivo",
+    ciudad: "Cali",
+    telefono: "3205678901",
+  },
+]);
+
+db.clientes.find();
+
+// Reservas
+db.reservas.insertMany([
+  {
+    _id: "res_001",
+    cliente_id: "cli_001",
+    cliente_email: "juanperez@example.com",
+    habitacion_id: "hab_101",
+    fecha_ingreso: "2025-04-10",
+    fecha_salida: "2025-04-15",
+    costo: 500,
+    estado: "confirmada",
+  },
+  {
+    _id: "res_002",
+    cliente_id: "cli_002",
+    cliente_email: "mariagomez@example.com",
+    habitacion_id: "hab_102",
+    fecha_ingreso: "2025-05-01",
+    fecha_salida: "2025-05-07",
+    costo: 700,
+    estado: "pendiente",
+  },
+  {
+    _id: "res_003",
+    cliente_id: "cli_001",
+    cliente_email: "juanperez@example.com",
+    habitacion_id: "hab_102",
+    fecha_ingreso: "2025-06-10",
+    fecha_salida: "2025-06-15",
+    costo: 750,
+    estado: "cancelada",
+  },
+  {
+    _id: "res_004",
+    cliente_id: "cli_002",
+    cliente_email: "mariagomez@example.com",
+    habitacion_id: "hab_103",
+    fecha_ingreso: "2025-07-01",
+    fecha_salida: "2025-07-05",
+    costo: 320,
+    estado: "confirmada",
+  },
+  {
+    _id: "res_005",
+    cliente_id: "cli_003",
+    cliente_email: "carlosramirez@example.com",
+    habitacion_id: "hab_104",
+    fecha_ingreso: "2025-08-10",
+    fecha_salida: "2025-08-15",
+    costo: 500,
+    estado: "pendiente",
+  },
+  {
+    _id: "res_006",
+    cliente_id: "cli_001",
+    cliente_email: "juanperez@example.com",
+    habitacion_id: "hab_105",
+    fecha_ingreso: "2025-09-15",
+    fecha_salida: "2025-09-20",
+    costo: 1000,
+    estado: "confirmada",
+  },
+  {
+    _id: "res_007",
+    cliente_id: "cli_002",
+    cliente_email: "mariagomez@example.com",
+    habitacion_id: "hab_103",
+    fecha_ingreso: "2025-10-10",
+    fecha_salida: "2025-10-15",
+    costo: 400,
+    estado: "cancelada",
+  },
+  {
+    _id: "res_008",
+    cliente_id: "cli_003",
+    cliente_email: "carlosramirez@example.com",
+    habitacion_id: "hab_101",
+    fecha_ingreso: "2025-11-05",
+    fecha_salida: "2025-11-10",
+    costo: 500,
+    estado: "cancelada",
+  },
+  {
+    _id: "res_009",
+    cliente_id: "cli_001",
+    cliente_email: "juanperez@example.com",
+    habitacion_id: "hab_104",
+    fecha_ingreso: "2025-12-01",
+    fecha_salida: "2025-12-07",
+    costo: 600,
+    estado: "cancelada",
+  },
+]);
+
+db.reservas.find();
